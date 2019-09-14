@@ -1,0 +1,164 @@
+for(let i = 1; i <= 12; i++){
+
+    if(i % 2 == 0){
+        console.log(i)
+    }
+  
+}
+
+function exp(i, b) {
+    
+    return i**b
+
+}
+
+console.log(exp(2,10));*/
+
+let caracter = '#';
+for(let i  = 1; i <= 10; i++){
+
+    console.log(caracter);
+    caracter += '#'
+
+}*/
+
+
+for(let i = 1 ; i <= 100; i++){
+
+    let out = '';
+
+    if(i%3 ==0){
+        out += 'fizz'
+    }
+    if(i%5 ==0){
+        out += 'buzz'
+    }
+
+    console.log(out || i);
+}
+
+
+function min(a, b) {
+    
+    if (a >= b) {
+        return b 
+    }else{
+        return a
+    }
+
+}
+
+console.log(min(5,-10));
+
+
+
+function countB(params) {
+    
+    let contador = 0; 
+
+    for (let index = 0; index < params.length; index++) {
+        if (params[index] == 'B') {
+            contador += 1
+        }
+    }
+
+    return contador
+}
+
+console.log(countB('martinez'));
+
+function countChar(string, char) {
+    
+    let contador = 0; 
+
+    for (let index = 0; index < string.length; index++) {
+        if (string[index] == char) {
+            contador += 1
+        }
+    }
+
+    return contador
+}
+
+console.log(countChar('martinem', 'm'));*/
+
+function range(start, end) {
+    
+    if(start < end){
+
+        let valor = []; 
+
+        for(let i = start; i <= end; i++){
+            valor.push(i)
+        }
+
+        return valor
+    }else{
+        let valor = []; 
+
+        for(let i = start; i >= end; i--){
+            valor.push(i)
+        }
+
+        return valor
+    }
+
+}
+
+function suma(array) {
+
+    let result = 0; 
+
+    array.forEach(element => {
+
+        result += element
+
+    });
+
+    return result
+
+}
+
+console.log(suma(range(1,10)));
+
+
+class group{
+
+    constructor(){
+        this.groups = []
+    }
+
+    add(value){
+        if (this.groups.includes(value, 0)) {
+            return 'el elemento ya existe'
+        }else{
+            this.groups.push(value)
+        }
+    }
+
+    has(value){
+       return (this.groups.includes(value, 0))? true : false
+    }
+
+    delete(values){
+       
+        this.groups.forEach((value, element) => {
+           if(value == values){
+               this.groups.splice(element, 1)
+           }
+        }); 
+
+    }
+
+
+    from(array){
+
+        array.forEach(element => {
+            if(!this.groups.includes(element, 0)){
+                this.groups.push(element)
+            }
+        })
+
+    }
+
+}
